@@ -32,12 +32,12 @@ void handleNewMessages(int numNewMessages) {
     String from_name = bot.messages[i].from_name;
     if (from_name == "") from_name = "Guest";
 
-    if (text == "/start" or text == "/start@caberawit_iot2_bot") {
+    if (text == "/start") {
       String welcome = "Selamat datang di pengamat suhu dan kelembaban, " + from_name + ".";
       bot.sendMessage(chat_id, welcome);
     }
     
-    if (text == "/suhu" or text == "/suhu@caberawit_iot2_bot") {
+    if (text == "/suhu") {
         float t = dht.readTemperature();
         String temperatur = "suhu saat ini adalah: ";
         temperatur += String(t);
@@ -45,7 +45,7 @@ void handleNewMessages(int numNewMessages) {
         bot.sendMessage(chat_id, temperatur);
     }
 
-    if (text == "/kelembaban" or text == "/kelembaban@caberawit_iot2_bot") {
+    if (text == "/kelembaban") {
         float h = dht.readHumidity();
         String kelembaban = "kelembaban saat ini adalah: ";
         kelembaban += String(h);
@@ -53,7 +53,7 @@ void handleNewMessages(int numNewMessages) {
         bot.sendMessage(chat_id, kelembaban);
     }
 
-    if (text == "/suhu_kelembaban" or text == "/kelembaban@caberawit_iot2_bot") {
+    if (text == "/suhu_kelembaban") {
         float h = dht.readHumidity();
         String kelembaban = "kelembaban saat ini adalah: ";
         kelembaban += String(h);
